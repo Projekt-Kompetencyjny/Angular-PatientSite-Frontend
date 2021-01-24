@@ -1,0 +1,42 @@
+.meeting-box {
+    width: 100%;
+    height: 95.4%;
+    padding: 50px;
+    color: white;
+    background-color: rgba(115, 115, 115, 0.8);
+    position: absolute;
+}
+
+.meeting-box h1 {
+    text-align: center;
+    font-size: 70px;
+}
+
+.meeting-box h2 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.meeting-box h3 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.meeting-box h4 {
+    width: 300px;
+    text-align: center;
+    margin-left: 1070px;
+    font-size: 30px;
+    margin-top: 30px;
+    border-bottom: 2px solid white;
+}
+
+.meeting-box a {
+    color: rgb(102, 255, 51);
+}
+
+.meeting-box a:hover {
+    color: rgb(51, 204, 0);
+}

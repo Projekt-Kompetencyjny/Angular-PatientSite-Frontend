@@ -1,0 +1,18 @@
+<div class="meeting-box">
+    <h1>Spotkanie</h1>
+    <div *ngIf="reservation.meetingLink !== ''; else noReservation">
+        <h2>Wejdź w link poniżej</h2>
+        <h2><a href="{{reservation.meetingLink}}" target="_blank">Kliknij, aby wejść na spotkanie!</a></h2>
+        <h3>Wejdź na spotkanie jako gość</h3>
+        <h3>Po dołączeniu do spotkania sprawdź czy twój mikrofon i kamera są włączone</h3>
+        <h3>Pamiętaj również o zezwoleniu na korzystanie z mikrofonu i kamery w przeglądarce!</h3>
+    </div>
+    <ng-template #noReservation>
+        <div>
+          <h2>Link nie został jeszcze stworzony przez doktora</h2>
+          <h2>Data twojej wizyty to</h2>  
+          <h4>{{reservation.reservationDate}}</h4>
+          <h4>{{reservation.reservationTime}}</h4>
+        </div>
+    </ng-template>
+</div>

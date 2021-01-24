@@ -1,0 +1,31 @@
+<div class="visit-box">
+    <div class="style-box">
+        <div class="doctor-info-box">
+            <h1><i class="fas fa-user-md"></i>  Profil Lekarza</h1>
+            <div class="data-box">
+                <h2>Imię Lekarza:<h3>{{visit.doctorFirstName}}</h3></h2>
+                <h2>Nazwisko Lekarza:<h3>{{visit.doctorLastName}}</h3></h2>
+            </div>
+        </div>
+        <div class="visit-info-box">
+            <h1><i class="far fa-clock"></i> Informacje o Wizycie</h1>
+            <div class="data-box">
+                <h2>Data Wizyty:<h3>{{visit.visitDate}}</h3></h2>
+                <h2>Godzina Wizyty:<h3>{{visit.visitTime}}</h3></h2>
+                <h2>Typ Wizyty:<h3>{{visit.visitType}}</h3></h2>
+            </div>
+        </div>
+    </div>
+    <div class="style-box">
+        <div class="style-info-box">
+            <h1><i class="fas fa-info-circle"></i> Informacje od Lekarza</h1> 
+            <div class="info-box">
+                <h2>Objawy Pacjenta:<h3>{{visit.symptoms}}</h3></h2>
+                <h2>Diagnoza dla Pacjenta:<h3>{{visit.diagnosis}}</h3></h2>
+                <h2>Przepisane Leki:<h3>{{visit.prescribedMedications}}</h3></h2>
+                <h2>Przyjmowanie Leków:<h3>{{visit.takingMedications}}</h3></h2>
+                <h2>Zalecenia dla Pacjenta:<h3>{{visit.recommendations}}</h3></h2>
+            </div>
+        </div>
+    </div>
+</div>

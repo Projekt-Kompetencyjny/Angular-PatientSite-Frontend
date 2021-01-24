@@ -1,0 +1,49 @@
+<div class="doctors-list-box">
+    <h1>Znalezieni Lekarze</h1>
+    <div *ngIf="doctors !== undefined; else noDoctors">
+        <div class="doctor-box" *ngFor="let doctor of doctors; let i = index">
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Imię:</h2>
+                    <h3>{{doctor.firstName}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Województwo:</h2>
+                    <h3>{{doctor.state}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Nazwisko:</h2>
+                    <h3>{{doctor.lastName}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Telefon:</h2>
+                    <h3>{{doctor.phone}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Specjalizacja:</h2>
+                    <h3>{{doctor.specialization}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>E-mail:</h2>
+                    <h3>{{doctor.email}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <button routerLink="{{doctor.doctorID}}" class="form-button">
+                        Profil doktora <i class="fas fa-user-md"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noDoctors>
+        <div>
+          <h1>BRAK LEKARZY</h1>  
+        </div>
+    </ng-template>
+</div>

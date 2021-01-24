@@ -1,0 +1,62 @@
+<div class="profile-box">
+  <h1><i class="fas fa-user"></i>  Profil Pacjenta</h1>
+
+  <div class="personal_data_box">
+    <h1>Dane Osobowe:</h1>
+    <h2>Imię:<h3>{{patient.firstName}}</h3></h2>
+    <h2>Nazwisko:<h3>{{patient.lastName}}</h3></h2>
+    <h2>Data Urodzenia:<h3>{{patient.dateOfBirth}}</h3></h2>
+    <h2>PESEL:<h3>{{patient.pesel}}</h3></h2>
+  </div>
+    
+  <div class="personal_data_box">
+    <h1>Adres Zamieszkania: </h1>
+    <h2>Ulica:<h3>{{patient.street}}</h3></h2>
+    <h2>Miasto:<h3>{{patient.city}}</h3></h2>
+    <h2>Województwo:<h3>{{patient.state}}</h3></h2>
+    <div class="help_box1">
+      &nbsp;
+    </div>
+  </div>
+    
+  <div style="margin-right: 0px"class="personal_data_box">
+    <h1>Dane Kontaktowe: </h1>
+    <h2>Telefon:<h3>{{patient.phone}}</h3></h2>
+    <h2>E-mail:<h3>{{patient.email}}</h3></h2>
+    <div class="help_box2">
+      &nbsp;
+    </div>
+  </div>
+  <div class="button-box">
+    <div class="button-position">
+      <button routerLink="edit" class="form-button">
+        Edytuj Dane
+      </button>
+    </div>
+    <div class="button-position">
+      <button (click)="onSubmitcheck()" class="form-button">
+        Usuń Konto
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="floating-box" *ngIf="accept">
+  <div class="accept-box">
+    <h1>Czy napewno chcesz usunąć konto?</h1>
+    <h2>Po jego usunięciu stracisz wszystkie dane!</h2>
+    <div class="button-box">
+      <div class="button-position2">
+        <button [disabled]="loading" (click)="onSubmit()" class="form-button2">
+          <span *ngIf="loading" class="spinner-border"></span>
+          TAK
+        </button>
+      </div>
+      <div class="button-position2">
+        <button (click)="onSubmitcheck()" class="form-button2">
+          NIE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

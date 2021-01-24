@@ -1,0 +1,33 @@
+<div class="card">
+    <h4><i class="fas fa-user"></i> Profil Pacjenta</h4>
+    <div class="login-box-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Pole E-mail musi być wypełnione!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password"><i class="fas fa-key"></i> Hasło</label>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Pole Hasło musi być wypełnione!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="form-button">
+                    <span *ngIf="loading" class="spinner-border"></span>
+                    Zaloguj
+                </button>
+                <button routerLink="../register" class="form-button">
+                    Rejestracja
+                </button>
+            </div>
+            <div class="link-box">
+                <a href="http://localhost:4500">Jesteś lekarzem? Kliknij, aby przejść na stronę dla Lekarzy</a>
+            </div>
+        </form>
+    </div>
+</div>

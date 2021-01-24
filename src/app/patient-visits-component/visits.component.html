@@ -1,0 +1,48 @@
+<div class="visit-list-box">
+    <h1>Twoje Wizyty</h1>
+    <div *ngIf="visits !== undefined; else noVisits">
+        <div class="visit-box" *ngFor="let visit of visits; let i = index">
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Data Wizyty:</h2>
+                    <h3>{{visit.visitDate}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Imię Doktora:</h2>
+                    <h3>{{visit.doctorFirstName}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Godzina Wizyty:</h2>
+                    <h3>{{visit.visitTime}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Nazwisko Doktora:</h2>
+                    <h3>{{visit.doctorLastName}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Rodzaj Wizyty:</h2>
+                    <h3>{{visit.visitType}}</h3>
+                </div>
+                <div class="data-box2">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <button routerLink="{{visit.visitId}}" class="form-button">
+                        Więcej Informacji
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noVisits>
+        <div>
+          <h1>BRAK WIZYT</h1>  
+        </div>
+    </ng-template>
+</div>

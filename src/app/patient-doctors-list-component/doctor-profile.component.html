@@ -1,0 +1,62 @@
+<div class="profile-box">
+    <h1><i class="fas fa-user-md"></i>  Profil Lekarza</h1>
+    <div class="personal_data_box">
+        <h2>Imię:<h3>{{doctor.firstName}}</h3></h2>
+        <h2>Nazwisko:<h3>{{doctor.lastName}}</h3></h2>
+        <h2>Specjalizacja:<h3>{{doctor.specialization}}</h3></h2>
+        <h2>Data Urodzenia:<h3>{{doctor.dateOfBirth}}</h3></h2>
+        <h2>PWZ:<h3>{{doctor.pwz}}</h3></h2>
+    </div>
+    <div class="personal_data_box">
+        <h2>Ulica:<h3>{{doctor.street}}</h3></h2>
+        <h2>Miasto:<h3>{{doctor.city}}</h3></h2>
+        <h2>Województwo:<h3>{{doctor.state}}</h3></h2>
+        <h2>Telefon:<h3>{{doctor.phone}}</h3></h2>
+        <h2>E-mail:<h3>{{doctor.email}}</h3></h2>
+    </div>
+    <div class="form-button-box">
+        <button (click)="checkReservation()" class="form-button">
+            Sprawdź Termin
+        </button>
+        <button (click)="onSubmitcheck()" class="form-button">
+            Zarezerwuj Termin
+        </button>
+    </div>
+    <div class="form-box">
+        <form [formGroup]="form">
+            <mat-form-field class="mat-form" appearance="fill">
+                <mat-label>Wybierz Date</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [matDatepickerFilter]="myFilter" formControlName="reservationDate" (dateChange)="date($event)">
+                <mat-datepicker-toggle class="datapicker-toggle" matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="mat-form" appearance="fill">
+                <mat-label>Wybierz Godzine</mat-label>
+                <mat-select formControlName="reservationTime">
+                    <mat-option *ngFor="let hour of hours" [value]='hour'>
+                        {{hour}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
+
+<div class="floating-box" *ngIf="accept">
+    <div class="accept-box">
+        <h1>Czy napewno chcesz dokonać rezerwacji?</h1>
+        <h2>Data: {{form.controls.reservationDate.value}}</h2>
+        <h2>Godzina: {{form.controls.reservationTime.value}}</h2>
+        <div class="button-position">
+            <button [disabled]="loading" (click)="addReservation()" class="form-button2">
+                <span *ngIf="loading" class="spinner-border"></span>
+                TAK
+            </button>
+        </div>
+        <div class="button-position">
+            <button (click)="onSubmitcheck()" class="form-button2">
+                NIE
+            </button>
+        </div>
+    </div>
+</div>

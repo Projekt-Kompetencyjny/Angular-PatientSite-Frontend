@@ -1,0 +1,63 @@
+<div class="reservations-box">
+    <h1>Lista Twoich Rezerwacji</h1>
+    <div *ngIf="reservations !== undefined; else noReservations">
+        <div class="reservation-box" *ngFor="let reservation of reservations; let i = index">
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Data Wizyty:</h2>
+                    <h3>{{reservation.reservationDate}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Godzina Wizyty:</h2>
+                    <h3>{{reservation.reservationTime}}</h3>
+                </div>
+                <div class="data-box">
+                    <h2>Rodzaj Wizyty:</h2>
+                    <h3>{{reservation.reservationType}}</h3>
+                </div>
+            </div>
+            <div class="data-block">
+                <div class="data-box">
+                    <h2>Imię Lekarza:</h2>
+                    <h3>{{reservation.firstName}}</h3>
+                </div>
+                <div style="margin-left: -13px;" class="data-box">
+                    <h2>Nazwisko Lekarza:</h2>
+                    <h3>{{reservation.lastName}}</h3>
+                </div>
+                <div class="data-box">
+                    <button (click)="onSubmitcheck(i)" class="form-button">
+                        Odwołaj <i class="far fa-window-close"></i>
+                    </button>
+                </div>
+                <div class="data-box">
+                    <button routerLink="{{reservation.reservationId}}" class="form-button2">
+                        Pokaż Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noReservations>
+        <div>
+          <h1>BRAK ZAREZERWOWANYCH WIZYT</h1>  
+        </div>
+    </ng-template>
+</div>
+
+<div class="floating-box" *ngIf="accept">
+    <div class="accept-box">
+        <h1>Czy napewno chcesz usunąć rezerwacje?</h1>
+        <div class="button-position">
+            <button [disabled]="loading" (click)="deleteReservation()" class="form-button2">
+                <span *ngIf="loading" class="spinner-border"></span>
+                TAK
+            </button>
+        </div>
+        <div class="button-position">
+            <button (click)="onSubmitcheck()" class="form-button2">
+                NIE
+            </button>
+        </div>
+    </div>
+</div>

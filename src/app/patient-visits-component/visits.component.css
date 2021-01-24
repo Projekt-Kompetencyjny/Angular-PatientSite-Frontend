@@ -1,0 +1,69 @@
+.visit-list-box {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    color: white;
+    background-color: rgba(115, 115, 115, 0.8);
+    position: absolute;
+}
+
+.visit-list-box h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.visit-box {
+    width: auto;
+    margin-top: 40px;
+    color: white;
+    background-color: rgba(95, 95, 95, 0.8);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.data-block {
+    width: 300px;
+    margin-left: 300px;
+    display: inline-block;
+}
+
+.data-box {
+    margin-top: 20px;
+}
+  
+.data-box h2 {
+    font-size: 30px;
+    margin-top: 25px;
+    border-bottom: 2px solid white;
+}
+  
+.data-box h3 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.data-box2 {
+    margin-top: 85px;
+}
+  
+.form-button {
+    width: 250px;
+    height: 60px;
+    color: white;
+    background-color: rgb(0, 102, 255);
+    font-size: 30px;
+    margin-left: 60px;
+    margin-bottom: 25px;
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+  
+.form-button:hover {
+    background-color: rgb(0, 82, 204);
+}
+  
+.form-button:focus {
+    outline: 0;
+}
